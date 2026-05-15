@@ -1,0 +1,22 @@
+{:paths ["."]
+ :deps  {org.clojure/clojure   {:mvn/version "1.12.0"}
+         missionary/missionary {:mvn/version "b.47"}}
+
+ :aliases
+ {;; Run a story:  clj -M:01   ..  clj -M:10
+  :01 {:main-opts ["-m" "stories.ch01-basics"]}
+  :02 {:main-opts ["-m" "stories.ch02-combinators"]}
+  :03 {:main-opts ["-m" "stories.ch03-cancellation"]}
+  :04 {:main-opts ["-m" "stories.ch04-communication"]}
+  :05 {:main-opts ["-m" "stories.ch05-flow-basics"]}
+  :06 {:main-opts ["-m" "stories.ch06-ambiguous"]}
+  :07 {:main-opts ["-m" "stories.ch07-signals"]}
+  :08 {:main-opts ["-m" "stories.ch08-sharing"]}
+  :09 {:main-opts ["-m" "stories.ch09-blocking-and-observe"]}
+  :10 {:main-opts ["-m" "stories.ch10-testing"]}
+
+  ;; Run all tests:  clj -M:test
+  :test {:extra-paths ["test"]
+         :extra-deps  {io.github.cognitect-labs/test-runner
+                       {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts   ["-m" "cognitect.test-runner"]}}}
